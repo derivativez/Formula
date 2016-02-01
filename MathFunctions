@@ -1,0 +1,8 @@
+package faces;
+import java.util.ArrayList;
+public interface mathFunctions {
+	double getYIntercept();
+	ArrayList<Double> getXValue(double y);
+	double getYValue(double x);
+	ArrayList<Double> getRoot();
+}
