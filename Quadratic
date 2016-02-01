@@ -1,0 +1,48 @@
+package faces;
+import java.util.ArrayList;
+
+public class quadratic implements mathFunctions {
+	private double a;
+	private double b;
+	private double c;
+	public quadratic(double a, double b, double c) {
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+	public static void main(String[] args) {
+		quadratic eq = new quadratic(1,2,1);
+		System.out.println(eq.getDerivative());
+	}
+
+	public String getDerivative() {
+		return Double.toString(2*a)+"x+ "+Double.toString(b);
+	}
+	public double getYIntercept() {
+		return c;
+	}
+
+	public double getXValue() {
+		return 0;
+	}
+
+	public double getYValue(double x) {
+		return a*Math.pow(x, 2)+b*x+c;
+	}
+	
+	public ArrayList<Double> getRoot() {
+		ArrayList<Double> results = new ArrayList<Double>();
+		if (Math.pow(b, 2)-4*a*c<0) {
+			return results;
+		}
+			results.add((-b+Math.sqrt(Math.pow(b, 2)-4*a*c))/2*a);
+			results.add((-b+Math.sqrt(Math.pow(b, 2)-4*a*c))/2*a);
+			return results;
+	}
+	@Override
+	public ArrayList<Double> getXValue(double y) {
+		ArrayList<Double> values = new ArrayList<Double>();
+		return values;
+	}
+	
+}
